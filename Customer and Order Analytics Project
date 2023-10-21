@@ -72,10 +72,20 @@ GROUP By Product;
 Q.#9 Which locations in New York received at least 3 orders in January, 
 and how many orders did they each receive? (Hint: use HAVING).
 
-Select location, Product, quantity
+Select distinct location, count (orderID)
 From BIT_DB.JanSales 
 WHERE length(orderid) = 6
 AND orderid <> 'Order ID'
 and location like '%New York%'
 Group by location
-Having quantity >=3
+Having count (orderID) >=3
+
+Q.#10 How many of each type of headphone were sold in February?
+
+Select Product, Sum(Quantity)
+From BIT_DB.FebSales
+WHERE length(orderid) = 6
+AND orderid <> 'Order ID'
+and Product like '%Headphones%'
+Group by Product
+
