@@ -1,9 +1,10 @@
-Q.#1 Who had the most songs in top 50?
+Q.#1 Which artists had the most songs in top 50?
 
 Select artist_name, count(*)
 From BIT_DB.Spotifydata
 Group By artist_name
-Order by  count(*) desc;
+Order by  count(*) desc
+Limit 2;
 
   Q.#2 
 What artist released the longest song? 
