@@ -6,3 +6,9 @@ Group By artist_name
 Order by  count(*) desc;
 
   Q.#2 
+What artist released the longest song? 
+
+Select artist_name, max(duration_ms)/60000 as duration_min
+From Spotifydata
+
+
