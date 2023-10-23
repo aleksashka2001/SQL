@@ -11,4 +11,9 @@ What artist released the longest song?
 Select artist_name, max(duration_ms)/60000 as duration_min
 From Spotifydata
 
+Q. #3 TOP 10 songs in 2021
 
+Select track_name, popularity
+From Spotifydata
+Order by popularity desc
+Limit 10;
