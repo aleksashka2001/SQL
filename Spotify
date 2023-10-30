@@ -18,3 +18,8 @@ Select track_name, popularity
 From Spotifydata
 Order by popularity desc
 Limit 10;
+
+Q#4 Find average tempo of top 50 songs 
+Select AVG (tempo)
+From Spotifydata
+Order by tempo asc;
