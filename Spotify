@@ -34,3 +34,11 @@ End as Compare_Average
 From BIT_DB.Spotifydata
 Group by track_name
 Order by avg(tempo) asc;
+
+What's the average danceability for the 10 most popular songs?
+
+Select AVG (danceability), track_name
+From Spotifydata
+Group by track_name
+Order by danceability desc
+Limit 10;
