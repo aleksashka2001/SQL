@@ -23,3 +23,14 @@ Q#4 Find average tempo of top 50 songs
 Select AVG (tempo)
 From Spotifydata
 Order by tempo asc;
+
+Q#5 Compare average tempo in top 50 songs
+
+Select AVG(tempo), artist_name, track_name,
+Case when avg(tempo)>=121 then "above average"
+When avg(tempo)<=121 then "below average"
+When avg(tempo)=121 then "average"
+End as Compare_Average
+From BIT_DB.Spotifydata
+Group by track_name
+Order by avg(tempo) asc;
