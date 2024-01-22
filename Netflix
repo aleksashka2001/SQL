@@ -1,3 +1,5 @@
+This project utilized data from the following Netflix dataset: 
+
 CREATE TABLE netflix_titles_info
     ("show_id" varchar(5), "type" varchar(7), "title" varchar(58), "country" varchar(74), "date_added" timestamp, "release_year" int, "rating" varchar(5), "duration" varchar(9), "listed_in" varchar(74))
 ;
@@ -56,10 +58,6 @@ VALUES
     ('s20', NULL, 'Blanca SuÃ¡rez| IvÃ¡n Marcos| Ã“scar Casas| AdriÃ¡n Lastra| Francesc Garrido| Stefan Weinert| Julia MÃ¶ller| Alicia Chojnowski')
     ;
 
-
-
-
-
 #1. How many movie titles are there in the database? (movies only, not tv shows)
 
 SELECT count(*)
@@ -94,3 +92,17 @@ FROM "netflix_titles_info"
 WHERE type='Movie'
 ORDER BY release_year asc
 LIMIT 1;
+
+# 6 How many TV Shows are there in the datatbase?
+
+Select count (type)
+From "netflix_titles_info"
+
+#7. Who was the Director the for TV Show 'Ganglands'?
+
+Select director
+From "netflix_titles_info" titles
+Left Join "netflix_people" people
+On titles.show_id=people.show_id 
+Where titles.title='Ganglands';
+Where type = 'TV Show';
