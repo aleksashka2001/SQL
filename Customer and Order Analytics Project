@@ -34,7 +34,6 @@ ORDER BY price ASC
 LIMIT 1;
 
 Q.#5 What is the total revenue for each product sold in January?
-(Revenue can be calculated using the number of products sold and the price of the products).
 
 Select sum(quantity)*price as revenue, product
 From BIT_DB.JanSales
@@ -99,7 +98,6 @@ WHERE length(orderid) = 6
 AND orderid <> 'Order ID'
 
 Q.#12 What was the average quantity of products purchased per account in February? 
-(Hint: just like question 3, we want the overall average, not the average for each account individually).
  
 select sum(quantity)/count(cust.acctnum)
 FROM BIT_DB.FebSales Feb
