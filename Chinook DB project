@@ -74,15 +74,11 @@ Join chinook.artists on albums.ArtistId=artists.ArtistId;
 
 12. Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
 
-SELECT t.Name AS 'Track Name', a.Title AS 'Album Title', m.Name AS 'Media Type', g.Name AS 'Genre'
-FROM chinook.tracks t
-JOIN chinook.Albums a 
-on a.AlbumId = t.AlbumId
-JOIN chinook.Media_Types m
-on m.MediaTypeId = t.MediaTypeId
-JOIN chinook.Genres g
-on g.GenreId = t.GenreId;
-
+Select tracks.Name as TrackName, albums.Title as AlbumTitle, media_types.Name as MediaType, genres.Name as GenreName
+From chinook.tracks
+Join chinook.albums on albums.AlbumId=tracks.AlbumId
+Join chinook.media_types on tracks.MediaTypeId=media_types.MediaTypeId
+Join chinook.genres on tracks.GenreId=genres.GenreId;
 
 13.Show the total sales made by each sales agent.
 
