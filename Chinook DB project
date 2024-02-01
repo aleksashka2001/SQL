@@ -98,6 +98,13 @@ Select Round (sum(invoices.Total)) as Total, employees.FirstName, employees.Last
 From chinook.employees
 Join chinook.customers on employees.EmployeeId=customers.SupportRepId
 Join chinook.invoices on customers.CustomerId=invoices.CustomerId
+
+15. "What tracks belong to the Alternative/Punk genre?
+
+SELECT tracks.Name
+FROM chinook.tracks
+JOIN genres ON tracks.genreId = genres.genreId
+WHERE genres.Name like '%Alternative%';
 Where Title = 'Sales Support Agent'
 and InvoiceDate like '%2009%'
 Group by employees.FirstName
